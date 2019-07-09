@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.objectFactory" value="spring" />
+
+	<package name="default" extends="struts-default">
+
+		<action name="register" class="userAction" method="register">
+			<result name="input">/index.jsp?page=register</result>
+			<result name="success">/index.jsp?page=person_info</result>
+		</action>
+
+		<action name="login" class="userAction" method="login">
+			<result name="input">/index.jsp?page=login</result>
+			<result name="success">/index.jsp</result>
+		</action>
+
+		<action name="logout" class="userAction" method="logout">
+			<result>/index.jsp</result>
+		</action>
+
+		<action name="goodsList" class="goodAction">
+			<result>/index.jsp?page=shop</result>
+		</action>
+
+		<action name="adminGoodList" class="goodAction"
+			method="getGoodForAdmin">
+			<result>/index.jsp?page=admin_pro</result>
+		</action>
+
+		<action name="adminRemoveGood" class="goodAction"
+			method="adminRemoveGood">
+			<result>/index.jsp?page=admin_pro</result>
+		</action>
+
+		<action name="goods" class="goodAction" method="getGoodById">
+			<result type="chain">
+				<param name="actionName">commentsList</param>
+			</result>
+		</action>
+
+		<action name="enterAdminAdd" class="goodAction"
+			method="enterAdminAdd">
+			<result name="error">/index.jsp?page=login</result>
+			<result name="success">/index.jsp?page=admin_add</result>
+		</action>
+
+		<action name="searchGoods" class="goodAction"
+			method="searchGoods">
+			<result name="success">/index.jsp?page=shop_search</result>
+		</action>
+
+		<action name="adminAddGood" class="goodAction"
+			method="adminAddGood">
+				<result name="success" type="redirectAction">adminRemoveGood.action</result>
+		</action>
+
+		<action name="commentsList" class="commentAction"
+			method="getCommentsByGoodId">
+			<result name="success">/index.jsp?page=shop-detail</result>
+		</action>
+		<action name="addComment" class="commentAction"
+			method="addComment">
+			<result name="success">/index.jsp?page=shop-detail</result>
+		</action>
+
+		<action name="myBrowsing" class="browsingAction"
+			method="getBrowsingByUser">
+			<result name="success">/index.jsp?page=person_history</result>
+		</action>
+
+		<action name="myComment" class="commentAction"
+			method="getCommentsByUser">
+			<result name="success">/index.jsp?page=person_comment</result>
+		</action>
+
+		<action name="cartList" class="cartAction"
+			method="getCartGoods">
+			<result name="error">/index.jsp?page=login</result>
+			<result name="success">/index.jsp?page=cart</result>
+		</action>
+
+		<action name="addCart" class="cartAction"
+			method="addGoodsToCart">
+			<result name="error">/index.jsp?page=login</result>
+			<result name="success">/index.jsp?page=cart</result>
+		</action>
+
+		<action name="removeCart" class="cartAction"
+			method="removeGoodsFromCart">
+			<result name="error">/index.jsp?page=login</result>
+			<result name="success">/index.jsp?page=cart</result>
+		</action>
+
+		<action name="collectList" class="collectAction"
+			method="getCollectGoods">
+			<result name="error">/index.jsp?page=login</result>
+			<result name="success">/index.jsp?page=person_wish</result>
+		</action>
+
+		<action name="addCollect" class="collectAction"
+			method="addGoodsToCollect">
+			<result name="error">/index.jsp?page=login</result>
+			<result name="success">/index.jsp?page=shop</result>
+		</action>
+
+		<action name="removeCollect" class="collectAction"
+			method="removeGoodsFromCollect">
+			<result name="error">/index.jsp?page=login</result>
+			<result name="success">/index.jsp?page=person_wish</result>
+		</action>
+
+		<action name="checkoutOrder" class="cartAction"
+			method="getCartGoods">
+			<result name="success">/index.jsp?page=checkout</result>
+		</action>
+
+		<action name="addOrdersheet" class="ordersheetAction"
+			method="addOrdersheet">
+			<result name="error">/index.jsp?page=login</result>
+			<result name="success">/index.jsp?page=person_checkout</result>
+		</action>
+
+		<action name="ordersheetList" class="ordersheetAction"
+			method="getUserOrdersheetList">
+			<result name="error">/index.jsp?page=login</result>
+			<result name="success">/index.jsp?page=person_checkout</result>
+		</action>
+
+		<action name="ordersheetDetail" class="ordersheetAction"
+			method="ordersheetDetail">
+			<result name="error">/index.jsp?page=login</result>
+			<result name="success">/index.jsp?page=person_checkout_detail</result>
+		</action>
+
+	</package>
+</struts> 
+
+  

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+ <session-factory>
+  <!-- 数据库连接配置 -->
+  <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+  <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/test?useUnicode=true&amp;characterEncoding=utf-8</property>
+  <property name="hibernate.connection.username">root</property>
+  <property name="hibernate.connection.password"></property>
+  <property name="hibernate.connection.pool_size">10</property>
+  <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect </property>
+  <!-- 自动根据映射文件重新生成数据库模式 -->
+  <property name="hibernate.hbm2ddl.auto">update</property>
+  <!-- 是否显示及格式化输出SQL -->
+  <property name="hibernate.show_sql">true</property>
+  <property name="hibernate.format_sql">true</property>
+  <!-- 是否自动关闭会话 -->
+  <property name="hibernate.transaction.auto_close_session">false</property>
+  <!-- 当前会话上下文类为线程 -->
+  <property name="hibernate.current_session_context_class">thread</property>
+  <!--4，是否显示sql：-->          
+  <!--是否在后台显示Hibernate用到的SQL语句，开发时设置为true，便于差错，程序运行时可以在Eclipse的控制台显示Hibernate的执行Sql语句。项目部署后可以设置为false，提高运行效率-->   
+  <property name="hibernate.show_sql">true </property> 
+  <mapping resource="com/appstore/model/entity/User.hbm.xml"></mapping>
+  <mapping resource="com/appstore/model/entity/Browsing.hbm.xml"></mapping>
+  <mapping resource="com/appstore/model/entity/Ordersheet.hbm.xml"></mapping>
+  <mapping resource="com/appstore/model/entity/Comment.hbm.xml"></mapping>
+  <mapping resource="com/appstore/model/entity/Cart.hbm.xml"></mapping>
+  <mapping resource="com/appstore/model/entity/Collect.hbm.xml"></mapping>
+  <mapping resource="com/appstore/model/entity/Good.hbm.xml"></mapping>
+  <mapping resource="com/appstore/model/entity/OrderGood.hbm.xml"></mapping>
+ </session-factory>
+</hibernate-configuration>

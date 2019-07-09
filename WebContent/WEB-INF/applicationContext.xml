@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- Hibernate 会话工厂对象 -->
+	<bean id="sessionFactory"
+		class="com.appstore.util.HibernateHelper"
+		factory-method="getSessionFactory" />
+
+	<!-- 用户管理的Dao,Service,Action -->
+	<bean id="userDao"
+		class="com.appstore.model.dao.UserDaoHibernateImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- UserService 用户操作的业务对象 -->
+	<bean id="userService"
+		class="com.appstore.model.service.UserServiceImpl">
+		<property name="dao" ref="userDao" />
+	</bean>
+	<!-- UserAction 用户操作的控制器对象 -->
+	<bean id="userAction" class="com.appstore.action.UserAction"
+		scope="prototype">
+		<property name="service" ref="userService" />
+		<property name="model" ref="userModel" />
+	</bean>
+	<bean id="userModel" class="com.appstore.model.entity.User"
+		scope="prototype" />
+
+	<!-- 商品管理的Dao,Service,Action -->
+	<bean id="goodDao"
+		class="com.appstore.model.dao.GoodDaoHibernateImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="goodService"
+		class="com.appstore.model.service.GoodServiceImpl">
+		<property name="dao" ref="goodDao" />
+	</bean>
+	<bean id="goodAction" class="com.appstore.action.GoodAction"
+		scope="prototype">
+		<property name="service" ref="goodService" />
+		<property name="browsingService" ref="browsingService" />
+		<property name="cartService" ref="cartService" />
+		<property name="commentService" ref="commentService" />
+		<property name="collectService" ref="collectService" />
+		<property name="orderGoodService" ref="orderGoodService" />
+	</bean>
+
+	<!-- 浏览历史的Dao,Service,Action -->
+	<bean id="browsingDao"
+		class="com.appstore.model.dao.BrowsingDaoHibernateImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="browsingService"
+		class="com.appstore.model.service.BrowsingServiceImpl">
+		<property name="dao" ref="browsingDao" />
+	</bean>
+	<bean id="browsingAction"
+		class="com.appstore.action.BrowsingAction" scope="prototype">
+		<property name="service" ref="browsingService" />
+		<property name="goodService" ref="goodService" />
+	</bean>
+
+	<!-- 我的评价的Dao,Service,Action -->
+	<bean id="commentDao"
+		class="com.appstore.model.dao.CommentDaoHibernateImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="commentService"
+		class="com.appstore.model.service.CommentServiceImpl">
+		<property name="dao" ref="commentDao" />
+	</bean>
+	<bean id="commentAction" class="com.appstore.action.CommentAction"
+		scope="prototype">
+		<property name="service" ref="commentService" />
+		<property name="goodService" ref="goodService" />
+	</bean>
+
+	<!-- 购物车管理的Dao,Service,Action -->
+	<bean id="cartDao"
+		class="com.appstore.model.dao.CartDaoHibernateImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="cartService"
+		class="com.appstore.model.service.CartServiceImpl">
+		<property name="dao" ref="cartDao" />
+	</bean>
+
+	<bean id="cartAction" class="com.appstore.action.CartAction"
+		scope="prototype">
+		<property name="service" ref="cartService" />
+		<property name="goodService" ref="goodService" />
+	</bean>
+
+	<!-- 收藏管理的Dao,Service,Action -->
+	<bean id="collectDao"
+		class="com.appstore.model.dao.CollectDaoHibernateImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="collectService"
+		class="com.appstore.model.service.CollectServiceImpl">
+		<property name="dao" ref="collectDao" />
+	</bean>
+	<bean id="collectAction" class="com.appstore.action.CollectAction"
+		scope="prototype">
+		<property name="service" ref="collectService" />
+		<property name="goodService" ref="goodService" />
+	</bean>
+
+	<!-- 订单管理的Dao,Service,Action -->
+	<bean id="ordersheetDao"
+		class="com.appstore.model.dao.OrdersheetDaoHibernateImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="ordersheetService"
+		class="com.appstore.model.service.OrdersheetServiceImpl">
+		<property name="dao" ref="ordersheetDao" />
+	</bean>
+	<bean id="ordersheetAction"
+		class="com.appstore.action.OrdersheetAction" scope="prototype">
+		<property name="service" ref="ordersheetService" />
+		<property name="goodService" ref="goodService" />
+		<property name="cartService" ref="cartService" />
+		<property name="orderGoodService" ref="orderGoodService" />
+	</bean>
+
+	<!-- 订单商品关联的Dao,Service,Action -->
+	<bean id="orderGoodDao"
+		class="com.appstore.model.dao.OrderGoodDaoHibernateImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="orderGoodService"
+		class="com.appstore.model.service.OrderGoodServiceImpl">
+		<property name="dao" ref="orderGoodDao" />
+	</bean>
+	<bean id="orderGoodAction"
+		class="com.appstore.action.OrderGoodAction" scope="prototype">
+		<property name="service" ref="orderGoodService" />
+	</bean>
+	
+</beans>
