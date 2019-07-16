@@ -36,7 +36,7 @@
 								</div>
 
 								<div class="am-form-group">
-									<label for="user-phone" class="am-form-label" style="margin-left:2px;">登陆账号:</label>
+									<label for="user-phone" class="am-form-label" style="margin-left:2px;">登录账号:</label>
 									<div class="am-form-content" style="margin-top: 8px;">
 										<span style="margin-left: 20px;"><s:property value="#session.user.loginId"/></span>
 									</div>

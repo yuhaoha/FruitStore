@@ -47,7 +47,7 @@
 											<h2 class="title">
 												<s:property value="name" />
 											</h2> <span class="price"> 
-													<s:property value="price" />
+													￥<s:property value="price" />
 										</span>
 										</a>
 									</div>
@@ -80,7 +80,7 @@
 												src="<s:property value="pictures" />" alt="" /> <span
 												class="product-title"><s:property value="name" /></span>
 										</a>
-											<s:property value="price" />
+											<span>￥<s:property value="price" /></span>
 									</s:iterator>
 								</ul>
 							</s:if>

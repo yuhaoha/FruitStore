@@ -49,8 +49,7 @@
 									<li><a href="index.jsp?page=login">登录</a></li>
 								</s:if>
 								<s:else>
-									<li><s:property value="#session.user.name" /> ( <s:property
-											value="#session.user.loginId" /> )，欢迎您! <a
+									<li><s:property value="#session.user.name" />，欢迎您! <a
 										href="logout.action">注销</a></li>
 									<li><a href="index.jsp?page=person_info">个人中心</a></li>
 								</s:else>
@@ -180,10 +179,9 @@
 									<i class="fa fa-map-marker"></i>
 								</div>
 								<div class="contact-inner">
-									<h6 class="contact-title">Address</h6>
+									<h6 class="contact-title">地址</h6>
 									<div class="contact-content">
-										1800 Abbot Kinney Blvd. Unit D &amp; E <br /> Venice, CA
-										90291
+										天津市滨海新区宏达街23号
 									</div>
 								</div>
 							</div>
@@ -194,8 +192,8 @@
 									<i class="fa fa-phone"></i>
 								</div>
 								<div class="contact-inner">
-									<h6 class="contact-title">Hotline</h6>
-									<div class="contact-content">0122 333 8889</div>
+									<h6 class="contact-title">电话</h6>
+									<div class="contact-content">022 6666 8888</div>
 								</div>
 							</div>
 						</div>
@@ -205,9 +203,9 @@
 									<i class="fa fa-envelope"></i>
 								</div>
 								<div class="contact-inner">
-									<h6 class="contact-title">Email Contact</h6>
+									<h6 class="contact-title">邮箱</h6>
 									<div class="contact-content">
-										organik@gmail.com <br /> contact@organikstore.com
+										nkufruitstore@gmail.com 
 									</div>
 								</div>
 							</div>
@@ -218,8 +216,8 @@
 									<i class="fa fa-globe"></i>
 								</div>
 								<div class="contact-inner">
-									<h6 class="contact-title">Website</h6>
-									<div class="contact-content">www.organikstore.com</div>
+									<h6 class="contact-title">网址</h6>
+									<div class="contact-content">http://www.nkuhao.xyz/fruitstore</div>
 								</div>
 							</div>
 						</div>
@@ -229,7 +227,7 @@
 		</div>
 
 		<!--复用的底部-->
-		<footer class="footer">
+<!-- 		<footer class="footer">
 			<div class="container">
 				<div style="text-align: center;">
 					<div class="widget">
@@ -247,7 +245,7 @@
 		</footer>
 		<div class="copyright">
 			<div class="backtotop" id="backtotop"></div>
-		</div>
+		</div> -->
 		<!--复用的底部结束-->
 	</div>
 

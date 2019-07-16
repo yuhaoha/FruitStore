@@ -36,8 +36,8 @@
 											</div>
 											<div class="comment-author-info">
 												<span class="comment-author-name"><s:property value="#session.user.name"/></span>
-												<a href="#" class="comment-date"><s:property value="commentTime"/></a>
-												<p><s:property value="content"/></p>
+												<s:property value="commentTime"/>
+												<p><a href="goods.action?goodId=<s:property value="goodsId" />" class="comment-date"><s:property value="content"/></a></p>
 											</div>
 										</div>
 									</li>

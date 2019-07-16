@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<footer class="footer">
+<!-- <footer class="footer">
 	<div class="container">
 		<div style="text-align: center;">
 			<div class="widget">
@@ -18,4 +18,4 @@
 </footer>
 <div class="copyright">
 	<div class="backtotop" id="backtotop"></div>
-</div>
+</div> -->

@@ -36,21 +36,22 @@
 									<h1 class="product-title">
 										<s:property value="good.name" />
 									</h1>
-									<div class="product-rating">
+<%-- 									<div class="product-rating">
 										<div class="star-rating">
 											<span style="width: 100%"></span>
 										</div>
-									</div>
+									</div> --%>
 									<div class="product-price">
 										￥<s:property value="good.price" />
 									</div>
 									<div class="mb-3">
-										<p>商品描述</p>
+										<p><s:property value="good.description" /></p>
 									</div>
 									<button class="single-add-to-cart">
 										<a href="addCart.action?goodId=<s:property value="good.id" />">ADD
 											TO CART</a>
 									</button>
+									<br /><br />
 									<div class="product-tool">
 										<a href="addCollect.action?goodId=<s:property value="good.id" />" data-toggle="tooltip" data-placement="top"
 											title="Add to wishlist"> Browse Wishlist </a>

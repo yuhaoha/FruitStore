@@ -39,7 +39,7 @@
 											data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]"
 											data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]">
 											<img src="images/slider/slide_7.png" alt="" />
-										</div> <a class="tp-caption btn-2 hidden-xs" href="#"
+										</div> <a class="tp-caption btn-2 hidden-xs" href="goodsList.action"
 										data-x="['center','center','center','center']"
 										data-y="['center','center','center','center']"
 										data-voffset="['260','260','260','260']" data-width="['auto']"
@@ -68,8 +68,8 @@
 						<div class="col-sm-6">
 							<div class="mb-1 section-pretitle default-left">Welcome to</div>
 							<h2 class="section-title mtn-2 mb-3">Organik Store</h2>
-							<p class="mb-4">这里是我们的简介</p>
-							<a class="organik-btn arrow" href="#">Our products</a>
+							<p class="mb-4">我们的水果商店，每天从全球各地进口最新鲜的水果，种类丰富，价格便宜，比超市更新鲜便宜。我们的物流保证您订单24小时内收到水果，不必再为等待快递而烦恼。心动不如行动，快来购物吧！</p>
+							<a class="organik-btn arrow" href="goodsList.action">Our products</a>
 						</div>
 					</div>
 				</div>
